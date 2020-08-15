@@ -1,2 +1,2 @@
 # santsang.github.io
-testign github pages services
+testing github pages services
