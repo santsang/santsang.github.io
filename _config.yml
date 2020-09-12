@@ -24,11 +24,11 @@ gems:
   - jemoji
   - jekyll-sitemap
   - jekyll_video_tag
-social_links:
-  twitter: jekyllrb
-  github:  jekyll
-  linkedin: jekyll
- social:
+#social_links:
+#  twitter: jekyllrb
+#  github:  jekyll
+#  linkedin: jekyll
+social:
   type:  # Person or Organization (defaults to Person)
   name:  # If the user or organization name differs from the site's name
   links:
