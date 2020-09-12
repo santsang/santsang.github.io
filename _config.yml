@@ -24,14 +24,8 @@ gems:
   - jemoji
   - jekyll-sitemap
   - jekyll_video_tag
-#social_links:
-#  twitter: jekyllrb
-#  github:  jekyll
-#  linkedin: jekyll
-social:
-  type:  Person # Person or Organization (defaults to Person)
-  name:  Sandro Tsang # If the user or organization name differs from the site's name
-  links:
-   - "https://twitter.com/skf_tsang"
-   - "https://www.linkedin.com/in/sandro-tsang"
+social_links:
+  twitter: jekyllrb
+  github:  jekyll
+  linkedin: jekyll
 
