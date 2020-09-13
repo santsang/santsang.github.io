@@ -31,8 +31,7 @@ social_links:
 author:
   name: "Sandro Tsang"
   location: "UK"
-  links:
-    - label: ""
-      icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/sandro-tsang"
+  uri:
+  linkedin: sandro-tsang
+  twitter: skf_tsang
 
