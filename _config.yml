@@ -28,4 +28,11 @@ social_links:
   twitter: jekyllrb
   github:  jekyll
   linkedin: jekyll
+author:
+  name: "Sandro Tsang"
+  location: "UK"
+  links:
+    - label: ""
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/sandro-tsang"
 
