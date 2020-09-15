@@ -1,6 +1,6 @@
 theme: jekyll-theme-minimal
-title: Welcome to Dr. Sandro Tsang&rsquos homepage
-description: Snippet examples stored in github
+title: A simple webpage
+description: Intro to snippet examples stored in github
 lsi: false
 safe: true
 source: _sources
@@ -24,14 +24,3 @@ gems:
   - jemoji
   - jekyll-sitemap
   - jekyll_video_tag
-social_links:
-  twitter: jekyllrb
-  github:  jekyll
-  linkedin: jekyll
-author:
-  name: "Sandro Tsang"
-  location: "UK"
-  uri:
-  linkedin: sandro-tsang
-  twitter: skf_tsang
-
