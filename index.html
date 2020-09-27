@@ -12,10 +12,10 @@
             font-family:serif;
             background: url("doc/pic_light_green.png") repeat 100% 100%, rgb( 102, 251, 168 ) opacity: 0.8;
             z-index: 1;
-            animation: colourspectrum 50s infinite;
+            animation: colourspectrum 50s infinite linear;
         }
         @keyframes colourspectrum {
-             50% {url("doc/pic_light_green.png") repeat 100% 100%, transparent; z-index: 2;}
+             50% {background: transparent url("doc/pic_light_green.png") repeat 100% 100%;}
         }
        p {font-size: 2.1vmax;
             display: inline-block;
