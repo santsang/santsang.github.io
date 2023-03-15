@@ -31,16 +31,36 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             100% {background: linear-gradient(-45deg, rgb( 229, 252, 235 ), rgb( 181, 236, 197 ), rgba( 251, 252, 229, 0.9 ) ); }
          /* 100% {background: linear-gradient(-135deg, rgb( 181, 236, 197 ) 0%, rgba( 251, 252, 229, 0.8 ) 100% ); } */
         }
-        p {font-size: 2.1vmax;
-            display: inline-block;
+        p { display: inline-block;
             margin:auto;
         }
-        a:link{color: #002080}
-        a.org:link{background-color: transparent; text-decoration: none;}
-        a.org:visited, a.org:hover, a.org:active {color: #002080; font-family: monospace; text-decoration: none;}
-        /* ref: https://www.w3schools.com/cssref/tryit.asp?filename=trycss_sel_link_more2 */
-    </style>
-    <title>Sandro Tsang&#8217s Homepage</title>
+/* If the screen size is at least at the specified width, set the specified font-size */
+@media screen and (min-width: 401px) {
+    h1.fontsize {
+        font-size: 36pt;
+    }
+    p.fontsize {
+        font-size: 18pt;
+    }
+}
+/* If the screen size is atmost at the specified width, set the set the specified font-size */
+@media screen and (max-width: 400px) {
+    h1.fontsize {
+        font-size: 39px;
+    }
+    p.fontsize {
+        font-size: 24px;
+    }
+}
+/* ref: https://www.w3schools.com/howto/howto_css_responsive_text.asp */
+    a:link{color: #002080}
+    a.org:link{background-color: transparent; text-decoration: none;}
+    a.org:visited, a.org:hover, a.org:active {color: #002080; font-family: monospace; text-decoration: none;}
+    /* ref: https://www.w3schools.com/cssref/tryit.asp?filename=trycss_sel_link_more2 */
+
+</style>
+
+<title>Sandro Tsang&#8217s Homepage</title>
 </head>
     
 <body>
@@ -48,6 +68,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NG9X29R"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+
 <h1 style="font-size:3.0vmax;">
 Welcome to Dr. Sandro Tsang&#8217s homepage
 </h1>
