@@ -39,14 +39,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         /* 100% {background: linear-gradient(-135deg, rgb( 181, 236, 197 ) 0%, rgba( 251, 252, 229, 0.8 ) 100% ); } */
     }
 
-    img.sticky {
-        position: -webkit-sticky; /* Safari */
-        position: sticky;
-        top: 0;
-        background-color: rgb(248, 252, 248);
-        border: 2px solid #4CAF50;
-    }
-    
     h1 {
         margin-top: 0;
         margin-bottom: 6pt;
@@ -55,6 +47,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     p { display: inline-block;
         margin:auto;
     }
+
+    img {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: -1;
+    }
+    
 /* If the screen size is at least at the specified width, set the specified font-size */
 @media screen and (min-width: 401px) {
     h1.fontsize {
@@ -91,7 +91,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 <h1 class="fontsize">Welcome to Dr. Sandro Tsang&#8217s homepage</h1>
-<img class=sticky; src="https://santsang.github.io/doc/TMmask.png">
+<img src="https://santsang.github.io/doc/TMmask.png">
 <p class="fontsize"; background-image: url("/doc/TMmask.png")>I have been awarded a PhD in Empirical Economics, and have worked in academic institutes of several countries. I have been a tutor on a master&#8217s degree programme accredited by <a class="org" href="https://www.who.int/workforcealliance/members_partners/member_list/peoplesuni/en/" target="_blank">the EUCLID University</a> since 2012. I also work with <a class="org" href="https://nextgenu.org/" target="_blank">NextGenU.org</a> to revise public health courses delivered to graduates of medical schools.  The duties drive me to learn evidence-based medicine research methodologies applicable to clinical practice and health policy-making.
     <br>
     <br>
