@@ -1,0 +1,407 @@
+:root {
+  --navBgCol: rgba( 230, 255, 255 );
+  --navFontCol: rgb( 0, 191, 118 );
+  --navFixedWidth: calc(26% + var(--fontAdj)); /*added 10px to the recommended width 278px (or btw 20% to 40%) due to the padding and margin of image frame*/
+  --navMaxWidth: 288px; /* add 10px for padding and margin of image; 278px is the recommended large image and 120px is that for small image */
+  --navMinWidth: 130px;
+  --navRight: 5px;
+  --fontAdj: 0.390625vw;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+*::after {
+  content: "";
+  clear: both;
+  display: table;
+} /* '.clearfix' keep the form in right format*/
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+h1{
+  display: block;
+  top: 0;
+  margin: 0;
+  font-size: calc(24px + 0.390625vw);
+  padding: 0;
+  padding-bottom: calc(6px + 0.390625vw);
+/*  vertical-align: -30px; */
+  font-weight: 900;
+}
+
+p, br, label, input, textarea {
+  display: block;
+  margin: 0;
+  font-size: calc(16px + 0.390625vw);
+  padding: calc(6px + 0.390625vw) 0;
+}
+
+h1 + p, h1 + ol {
+    margin-top: calc(6px + 0.390625vw);
+}
+
+ol li{
+  font-size: calc(16px + 0.390625vw);
+  margin 0;
+  padding: calc(2px + 0.390625vw) 0;
+}
+
+a:link {color: #002080;
+  text-decoration: none;
+}
+a:visited {text-decoration: underline;}
+a.org:hover, a.org:active {
+  font-family: monospace;
+  text-decoration: none;
+}
+
+form:focus-within {
+  font-weight: 700;
+}
+
+label {
+  float:left;
+  inline-size: calc(0px - 0.390625vw);
+  width:168px;
+  clear:left;
+  text-align:left;
+  padding: calc(3px + 0.390625vw);
+  }
+
+input, textarea {
+  float:left;
+  width: calc(58vw + 0.390625vw);
+  max-width: 388px;
+  color: rgb(0, 0, 102);
+  padding: calc(3px + 0.390625vw);
+}
+
+input {height: 28px;}
+
+<!--
+.container {
+  margin-top: 0;
+  position: relative;
+  text-align: top;
+  padding: 0;
+}-->
+
+.container{
+  width: 100%;
+  display: inline-block;
+  margin-top: 0px;
+}
+
+.container *{
+  display: in-block;
+  float: left;
+}
+
+.main {
+  position: relative;
+  top: 0;
+  width: calc(100% -  var(--navFixedWidth) - var(--navRight) - 10px + var(--fontAdj));
+/*  inline-size: calc(100% - var(--navMaxWidth)); */
+/* Same width as the sidebar + right position in px */
+ 	overflow: hidden;
+  text-align: top;
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+  z-index: 0;
+}
+   
+.sidenav {
+  position: fixed; /* move along the scrollbar */
+  display: block;
+  top: 0px;
+  right: var(--navRight);
+  width: var(--navFixedWidth);
+/*  left: calc(100% - var(--navFixedWidth)); */
+  height: 100%;
+/*  background: var(--navBgCol); */
+  background-image: url("https://santsang.github.io/docs/assets/pic_light_green.png");
+  padding: 8px 0;
+  z-index: 1;
+}
+
+.sidenav button {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  width: 100%;
+  border: none;
+  padding: 0;
+  padding-left: 8px;
+  text-decoration: none;
+  font-size: calc(15px + 0.390625vw);
+  font-weight: 600;
+  overflow: hidden;
+  outline: none;
+  color: var(--navFontCol);
+  text-align: left;
+  display: block;
+}
+
+.sidenav button:hover, .sidenav button.active:hover {
+  background-color: transparent;
+  border: 2px solid rgb(159, 159, 223);
+  box-shadow: 2px 3px rgb(159, 159, 223);
+  color: rgb( 51, 133, 255 );
+  transform: translateY(2px);
+}
+
+.sidenav button:focus {
+  background-color: #ddd;
+  color: var(--navFontCol);
+}
+
+.sidenav button.active, .sidenav button.active:focus {
+  background-color: var(--navFontCol);
+  color: white;
+}
+
+.navFrame {
+  position: relative;
+/*  top: 136px; */
+  margin-top: 6px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: auto;
+  max-height: 70vh;
+  overflow: hidden;
+  border-radius: 3px;
+  border: 2px solid rgb(102, 0, 51);
+  /* colour for "alt" */
+  padding: 3px;
+/*  background-color: white; */
+  opacity: 0;
+  color: rgb(0, 0, 102);
+  font-size: 12px;
+  text-align: center;
+  float: right;
+  object-fit: fill;
+  cursor: zoom-in;
+}
+
+.navBackFrame {
+  position: relative;
+  display: inline-block;
+  top: 10px;
+  margin-top: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  width: 100%;
+  max-height: 70vh;
+  overflow: hidden;
+  border: 2px solid rgb(102, 0, 51);
+  border-radius: 3px;
+  padding: 3px 3px 0px 3px;
+  color: rgb(0, 0, 102);
+  font-size: 12px;
+  text-align: center;
+  cursor: default;
+  float: right;
+}
+
+<!--.navBackFrame:hover {
+  position: absolute;
+  top: 10px;
+  left: calc(150% - var(--navFixedWidth));
+/*  width: calc(var(--navFixedWidth) * 1.1) */
+  height: auto;
+  max-width: auto;
+  max-height: 90vh;
+  background-color: rgba(0,0,0,0);
+/*  scale: 1 100%; */
+  object-fit: fill;
+  cursor: default;
+}-->
+
+.navBackFrame img {
+  width: 100%;
+  /* max-width: calc(var(--navFixedWidth) - 10px); */
+  height: auto;
+}
+
+.zoom {
+  transition: transform.25s ease-in-out;
+  }
+.zoom:hover {
+  position: fixed;
+  top: -20px;
+  right: calc(150% - var(--navFixedWidth));
+/*  left: -336px; */
+  max-height: 79vh;
+  scale: 1.39 135%;
+  object-fit: fill;
+  background-color: rgha(0,0,0,0);
+}
+
+#submit {
+ float: left;
+ margin-top: calc(3px + var(--fontAdj));
+ width:50px;
+ font-size: calc(12px + var(--fontAdj));
+/* padding: 2px 2px; */
+ text-align:center;
+ background-color: rgb( 51, 133, 255 );
+ box-shadow: 1px 3px 5px gray;
+ color: white;
+}
+
+#submit:hover {opacity: 0.7;}
+
+#submit:active {transform: translateY(3px);}
+
+::placeholder {font-size: 12pt;}
+
+#articles, #repos, #contact {display: none;}
+#contact {position: fixed; top: 30px;} /*the contact form*/
+
+#articlesPic, #contactPic, #reposPic, #backPic {display: none;}
+/* #slideshow {display: none;} */ /* testing */
+/* #articlesPic, #contactPic, #reposPic, #backPic {display: block;} */
+
+
+#slideshow {
+  height: 79vh;
+  position: relative;
+  overflow: hidden;
+} /*the height affect that of the navFrame*/
+
+#slideshow > img {
+  position: absolute;
+  display: inline-block;
+  top: 100%;
+  left: 0;
+  animation: 82s autoplay infinite ease;
+}
+
+#slideshow > img:nth-child(1) {animation-delay: 0s}
+#slideshow > img:nth-child(2) {animation-delay: 6.63s}
+#slideshow > img:nth-child(3) {animation-delay: 13.26s}
+#slideshow > img:nth-child(4) {animation-delay: 19.89s}
+#slideshow > img:nth-child(5) {animation-delay: 26.52s}
+#slideshow > img:nth-child(6) {animation-delay: 33.805s}
+#slideshow > img:nth-child(7) {animation-delay: 41.085s}
+#slideshow > img:nth-child(8) {animation-delay: 47.647s}
+#slideshow > img:nth-child(9) {animation-delay: 54.915s}
+#slideshow > img:nth-child(10) {animation-delay: 62.18s}
+#slideshow > img:nth-child(11) {animation-delay: 68.81s}
+#slideshow > img:nth-child(12) {animation-delay: 75.44s}
+
+@keyframes autoplay {
+  0% {top: 100%; opacity: 0.01;}
+  6.5% {top: 0%; opacity: 0.7;}
+  9.5% {top: 0%; opacity: 1;}
+  13% {top: 0%; opacity: 1;}
+/*  11% {top: 0%; opacity: 1;} */
+  16% {top: 0%; opacity: 0;}
+  28% {top: -100%; opacity: 0;}
+/* 11.5% {top: -100%; opacity: 0;} */
+/* create a gap between two pics after touching each other if 11%... are replaced */
+  100% {top: -100%; opacity: 0;}
+}
+<!--
+https://www.w3.org/Style/Examples/007/slideshow.en.html
+  # keyframes calculation... explained
+-->
+ 
+
+<!--*******responsive design*******-->
+@media screen and (min-width: 977px) {
+  .main {
+    width: calc(100% -  var(--navMaxWidth) - var(--navRight) - 10px);
+  }
+  .sidenav {
+    width: var(--navMaxWidth);
+  }
+}
+/* the responsive slideshow won't work if deleted */
+
+
+@media screen and (max-width: 711px) {
+  h1 {
+    font-size: calc(20px + var(--fontAdj));
+  }
+
+  .sidenav button {
+    padding: 1px;
+    padding-left: 5px;
+    font-size: calc(13px + 0.390625vw);
+    font-weight: 800;
+  }
+  
+  @keyframes autoplay {
+    0% {top: 0%; opacity: 0.01;}
+    2.5% {top: 0%; opacity: 0.1;}
+    9% {top: 0%; opacity: 1;}
+    13% {top: 0%; opacity: 0.8;}
+    15% {top: 0%; opacity: 0;}
+    20% {top: -100%; opacity: 0;}
+  /* 11.5% {top: -100%; opacity: 0;} */
+  /* create a gap between two pics after touching each other if 11%... are replaced */
+    100% {top: -100%; opacity: 0;}
+  }
+  
+  /* img, .navFrame, .navBackFrame {display: none;} */
+  
+}
+
+@media screen and (max-width: 429px) {
+  input, textarea {
+    width: 90%;
+    padding: calc(2px + 0.390625vw);
+  }
+  .container{
+    width: 100%;
+    display: block;
+    margin-top: 0px;
+  }
+
+  .container *{
+    display: block;
+    float: none;
+  }
+  
+  .main {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+  }
+  .sidenav {
+    position: relative;
+    overflow: hidden;
+    right: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+  }
+
+  .sidenav button {
+    top: 0;
+    width: 100%;
+    padding: 0;
+    font-weight: 700;
+    text-align: center;
+    float: none;
+  }
+
+  .sidenav button.active {
+    font-weight: 700;
+  }
+ 
+  img, .navFrame, .navBackFrame, #slideshow {display: none;}
+  
+  #contact {position: relative; top: 0;}
+}
