@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NG9X29R');
+</script>
+    <!-- End Google Tag Manager -->
+    <!-- Google search console code-->
+    <meta name="google-site-verification" content="4vaKQWy9Jxkjj7ntAcDxVcfVo0zBJ-DN2Oftv56BK1I" />
+    <!--Responsive design-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--google font API-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,800,900|Audiowide|Sofia|Trirong|Droid+Sans">
+<style>
+:root {
+  --navBgCol: rgba( 230, 255, 255 );
+  --navFontCol: rgb( 0, 191, 118 );
+  --navFixedWidth: calc(26% + var(--fontAdj)); /*added 10px to the recommended width 278px (or btw 20% to 40%) due to the padding and margin of image frame*/
+  --navMaxWidth: 288px; /* add 10px for padding and margin of image; 278px is the recommended large image and 120px is that for small image */
+  --navMinWidth: 130px;
+  --navRight: 5px;
+  --fontAdj: 0.390625vw;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+*::after {
+  content: "";
+  clear: both;
+  display: table;
+} /* '.clearfix' (w3school; float) keeps the form in right format */
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+h1{
+  display: block;
+  top: 0;
+  margin: 0;
+  font-size: calc(24px + 0.390625vw);
+  padding: 0;
+  padding-bottom: calc(0px + 0.390625vw) ;
+/*  vertical-align: -30px; */
+  font-weight: 900;
+}
+
+p, br, label, input, textarea {
+  display: block;
+  margin: 0;
+  font-size: calc(16px + 0.390625vw);
+  padding: calc(6px + 0.390625vw) 0;
+}
+
+h1 + p, h1 + ol {
+    margin-top: calc(6px + 0.390625vw);
+}
+
+ol li{
+  font-size: calc(16px + 0.390625vw);
+  margin 0;
+  padding: calc(2px + 0.390625vw) 0;
+}
+
+a:link {color: #002080;
+  text-decoration: none;
+}
+a:hover, a.org:active, a.org:hover {
+  text-decoration: none;
+  background-color: rgba(159, 159, 223, 0.6);
+}
+
+form:focus-within {
+  font-weight: 700;
+}
+
+label {
+  float:left;
+  inline-size: calc(0px - 0.390625vw);
+  width:168px;
+  clear:left;
+  text-align:left;
+  padding: calc(3px + 0.390625vw);
+  }
+
+input, textarea {
+  float:left;
+  width: calc(58vw + 0.390625vw);
+  max-width: 388px;
+  color: rgb(0, 0, 102);
+  padding: calc(3px + 0.390625vw);
+}
+
+input {height: 28px;}
+
+.container{
+  width: 100%;
+  display: inline-block;
+  margin-top: 0px;
+}
+
+.container *{
+  display: inline-block;
+} /* essential */
+
+.main {
+  position: absolute;
+  top: 0;
+  width: calc(100% -  var(--navFixedWidth) - var(--navRight) - 10px + var(--fontAdj));
+/*  inline-size: calc(100% - var(--navMaxWidth)); */
+/* Same width as the sidebar + right position in px */
+ 	overflow: hidden;
+  text-align: top;
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+  z-index: 0;
+}
+   
+.sidenav {
+  position: fixed; /* move along the scrollbar */
+  display: block;
+  top: 0px;
+  right: var(--navRight);
+  width: var(--navFixedWidth);
+/*  left: calc(100% - var(--navFixedWidth)); */
+  height: 100%;
+/*  background: var(--navBgCol); */
+  background-image: url("https://santsang.github.io/docs/assets/pic_light_green.png");
+  padding: 8px 0;
+  z-index: 1;
+}
+
+.sidenav button {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  width: 100%;
+  border: none;
+  padding: 0;
+  padding-left: 8px;
+  text-decoration: none;
+  font-size: calc(15px + 0.390625vw);
+  font-weight: 600;
+  overflow: hidden;
+  outline: none;
+  color: var(--navFontCol);
+  text-align: left;
+  display: block;
+}
+
+.sidenav button:hover, .sidenav button.active:hover {
+  background-color: transparent;
+  border: 2px solid rgb(159, 159, 223);
+  box-shadow: 2px 3px rgb(159, 159, 223);
+  color: rgb( 51, 133, 255 );
+  transform: translateY(2px);
+}
+
+.sidenav button:focus {
+  background-color: #ddd;
+  color: var(--navFontCol);
+}
+
+.sidenav button.active, .sidenav button.active:focus {
+  background-color: var(--navFontCol);
+  color: white;
+}
+
+.navFrame {
+  position: relative;
+/*  top: 136px; */
+  margin-top: 6px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: auto;
+  max-height: 70vh;
+  overflow: hidden;
+  border-radius: 3px;
+  border: 2px solid rgb(102, 0, 51);
+  /* colour for "alt" */
+  padding: 3px;
+/*  background-color: white; */
+  opacity: 0;
+  color: rgb(0, 0, 102);
+  font-size: 12px;
+  text-align: center;
+  float: right;
+  object-fit: fill;
+  cursor: zoom-in;
+}
+
+.navStatFrame {
+  position: relative;
+  display: inline-block;
+  top: 10px;
+  margin-top: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  width: 100%;
+  max-height: 70vh;
+  overflow: hidden;
+  border: 2px solid rgb(102, 0, 51);
+  border-radius: 3px;
+  padding: 3px 3px 0px 3px;
+  color: rgb(0, 0, 102);
+  font-size: 12px;
+  text-align: center;
+  cursor: default;
+  float: right;
+  enableBrowserTooltips: true;
+}
+
+.navStatFrame img {
+  width: 100%;
+  /* max-width: calc(var(--navFixedWidth) - 10px); */
+  height: auto;
+}
+
+.zoom {
+  transition: transform.25s ease-in-out;
+  }
+.zoom:hover {
+  position: fixed;
+  top: -30px;
+  right: calc(150% - var(--navFixedWidth));
+/*  left: -336px; */
+  max-height: 79vh;
+  scale: 1.39 135%;
+  object-fit: fill;
+  background-color: rgha(0,0,0,0);
+}
+
+#submit {
+ float: left;
+ margin-top: calc(3px + var(--fontAdj));
+ width:50px;
+ font-size: calc(12px + var(--fontAdj));
+/* padding: 2px 2px; */
+ text-align:center;
+ background-color: rgb( 51, 133, 255 );
+ box-shadow: 1px 3px 5px gray;
+ color: white;
+}
+
+#submit:hover {opacity: 0.7;}
+
+#submit:active {transform: translateY(3px);}
+
+::placeholder {font-size: 12pt;}
+
+#articles, #repos, #contact {display: none;}
+#contact {top: 20px;} /*the contact form*/
+
+#articlesPic, #contactPic, #reposPic, #backPic {display: none;}
+/* #slideshow {display: none;} */ /* testing */
+/* #articlesPic, #contactPic, #reposPic, #backPic {display: block;} */
+
+
+#slideshow {
+  height: 79vh;
+  position: relative;
+  overflow: hidden;
+} /*the height affect that of the navFrame*/
+
+#slideshow > img {
+  position: absolute;
+  display: inline-block;
+  top: 100%;
+  left: 0;
+  animation: 82s autoplay infinite ease;
+}
+
+#slideshow > img:nth-child(1) {animation-delay: 0s}
+#slideshow > img:nth-child(2) {animation-delay: 6.63s}
+#slideshow > img:nth-child(3) {animation-delay: 13.26s}
+#slideshow > img:nth-child(4) {animation-delay: 19.89s}
+#slideshow > img:nth-child(5) {animation-delay: 26.52s}
+#slideshow > img:nth-child(6) {animation-delay: 33.805s}
+#slideshow > img:nth-child(7) {animation-delay: 41.085s}
+#slideshow > img:nth-child(8) {animation-delay: 47.647s}
+#slideshow > img:nth-child(9) {animation-delay: 54.915s}
+#slideshow > img:nth-child(10) {animation-delay: 62.18s}
+#slideshow > img:nth-child(11) {animation-delay: 68.81s}
+#slideshow > img:nth-child(12) {animation-delay: 75.44s}
+
+@keyframes autoplay {
+  0% {top: 100%; opacity: 0.01;}
+  6.5% {top: 0%; opacity: 0.7;}
+  9.5% {top: 0%; opacity: 1;}
+  13% {top: 0%; opacity: 1;}
+/*  11% {top: 0%; opacity: 1;} */
+  16% {top: 0%; opacity: 0;}
+  28% {top: -100%; opacity: 0;}
+/* 11.5% {top: -100%; opacity: 0;} */
+/* create a gap between two pics after touching each other if 11%... are replaced */
+  100% {top: -100%; opacity: 0;}
+}
+<!--
+https://www.w3.org/Style/Examples/007/slideshow.en.html
+  # keyframes calculation... explained
+-->
+ 
+
+<!--*******responsive design*******-->
+@media screen and (min-width: 977px) {
+  .main {
+    width: calc(100% -  var(--navMaxWidth) - var(--navRight) - 10px);
+  }
+  .sidenav {
+    width: var(--navMaxWidth);
+  }
+}
+/* the responsive slideshow won't work if deleted */
+
+
+@media screen and (max-width: 711px) {
+  h1 {
+    font-size: calc(18px + var(--fontAdj));
+  }
+
+  .sidenav button {
+    padding: 1px;
+    padding-left: 5px;
+    font-size: calc(14px + var(--fontAdj));
+    font-weight: 800;
+  }
+  
+  @keyframes autoplay {
+    0% {top: 0%; opacity: 0.01;}
+    2.5% {top: 0%; opacity: 0.1;}
+    9% {top: 0%; opacity: 1;}
+    13% {top: 0%; opacity: 0.8;}
+    15% {top: 0%; opacity: 0;}
+    20% {top: -100%; opacity: 0;}
+  /* 11.5% {top: -100%; opacity: 0;} */
+  /* create a gap between two pics after touching each other if 11%... are replaced */
+    100% {top: -100%; opacity: 0;}
+  }
+  
+  /* img, .navFrame, .navStatFrame {display: none;} */
+  
+}
+
+@media screen and (max-width: 599px) {
+  .main {
+    width: calc(100% - 29% - var(--navRight) - var(--fontAdj) - 10px);
+  }
+  .sidenav {
+      width: calc(29% + var(--fontAdj));
+  }
+}
+
+@media screen and (max-width: 429px) {
+  h1 {
+    font-size: calc(17px + var(--fontAdj));
+    font-weight: 600;
+  }
+  p, br, label, input, textarea {
+    font-size: calc(15px + var(--fontAdj));
+  }
+  h1 + p {
+    padding: calc(1px + var(--fontAdj));
+  }
+  input, textarea {
+    width: 90%;
+    padding: calc(2px + 0.390625vw);
+  }
+  .container{
+    width: 100%;
+  }
+  .main, #contact {
+    top: calc(20vh + var(--fontAdj));
+    left: 0;
+    right: 0;
+    width: auto;
+  }
+  .sidenav {
+    position: relative;
+    overflow: hidden;
+    right: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+  }
+  .sidenav button {
+    top: 0;
+    width: 100%;
+    padding: 0;
+    font-weight: 700;
+    text-align: center;
+    float: none;
+  }
+  .sidenav button.active {
+    font-weight: 700;
+  }
+  img, .navFrame, .navStatFrame, #slideshow {display: none;}
+}
+@media screen and (max-width: 199px) {
+  h1 {
+    font-size: calc(14px + var(--fontAdj));
+  }
+  p, br, label, input, textarea {
+    font-size: calc(13px + var(--fontAdj));
+  }
+  .sidenav button, .sidenav button.active {
+    font-size: calc(13px + var(--fontAdj));
+  }
+  h1 + p {
+    padding: calc(2px + var(--fontAdj));
+  }
+  .main, #contact {
+    top: calc(21vh + var(--fontAdj));
+    left: 0;
+    right: 0;
+    width: auto;
+  }
+}
+
+</style>
+  <title>Sandro Tsang&rsquo;s Homepage</title>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NG9X29R"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!--*******Detect IE/Edge & Main Context*******-->
+<!--*******navigation bar*******-->
+<div class="sidenav">
+  <div>
+    <h1 id="result" style="color:blue;">Oops! I don't look good in an IE/Edge browser :(.</h1>
+  </div>
+  <div>
+    <button class="active" onclick="switchText('about')">About</button>
+    <button onclick="switchText('articles')">Publications</button>
+    <button onclick="window.open('https://github.com/santsang');switchText('repos')">Programming</button>
+    <button onclick="switchText('contact')">Contact
+    </button>
+  </div>
+  <!--About Page-->
+  <div class="zoom" id="slideshow">
+    <img class="navFrame" alt="Sunrise &commat;08.19 &commat;IMM" title="Sunrise &commat;08.19 &commat;IMM" src="https://santsang.github.io/docs/assets/IMG_20201210_081945.jpg" loading="lazy" decoding="async" tabindex="0">
+    <img class="navFrame" alt="Sunrise &commat;08.32 &commat;IMM" title="Sunrise &commat;08.32 &commat;IMM" src="https://santsang.github.io/docs/assets/IMG_20201210_083259.jpg" loading="lazy" decoding="async" tabindex="0">
+    <img class="navFrame" alt="Sunrise &commat;08.37 &commat;IMM" title="Sunrise &commat;08.37 &commat;IMM" src="https://santsang.github.io/docs/assets/IMG_20201210_083724.jpg" loading="lazy" decoding="async" tabindex="0">
+    <img class="navFrame" alt="Sunrise &commat;08.41 &commat;IMM" title="Sunrise &commat;08.41 &commat;IMM" src="https://santsang.github.io/docs/assets/IMG_20201210_084136.jpg" loading="lazy" decoding="async" tabindex="0">
+    <img class="navFrame" alt="Bonjour Teddy Bear" title="Bonjour Teddy Bear" src="https://santsang.github.io/docs/assets/IMG_20210922_091744.jpg" loading="lazy" decoding="async" tabindex="0">
+    <img class="navFrame" alt="Car &commat;St. Sulpice" title="Car &commat;St. Sulpice" src="https://santsang.github.io/docs/assets/IMG_20180925_184009.jpg" loading="lazy" decoding="async" tabindex="0">
+    <img class="navFrame" alt="Dream Car &commat;75007" title="Dream Car &commat;75007" src="https://santsang.github.io/docs/assets/IMG_20181003_190239.jpg" loading="lazy" decoding="async" tabindex="0">
+    <img class="navFrame" alt="Eiffel Tower in July" title="Eiffel Tower in July" src="https://santsang.github.io/docs/assets/IMG_20190716_200506.jpg" loading="lazy" decoding="async" tabindex="0">
+    <img class="navFrame" alt="Eiffel Tower - non-classic" title="Eiffel Tower - non-classic view" src="https://santsang.github.io/docs/assets/IMG_20190716_193335.jpg" loading="lazy" decoding="async" tabindex="0">
+    <img class="navFrame" alt="Missed Love Lock"title="Missed Love Locks" src="https://santsang.github.io/docs/assets/IMG_20200528_194041.jpg" loading="lazy" decoding="async"  tabindex="0">
+    <img class="navFrame" tabindex="0" alt="Globes &commat;BnF FM" title="Globes &commat;BnF FM" src="https://santsang.github.io/docs/assets/IMG_20230120_152835.jpg" loading="lazy", decoding="async">
+    <img class="navFrame" tabindex="0" alt="Sunset &commat;21.35" title="Sunset &commat;21.35" src="https://santsang.github.io/docs/assets/IMG_20200531_213557.jpg" loading="lazy", decoding="async">
+  </div>
+  <!--Static Pics-->
+  <div class="navStatFrame">
+    <img id="articlesPic" alt="arVix wordcloud &copy;S. Tsang (2019)" title="Worldcloud from a Preprint" src="https://santsang.github.io/docs/assets/TMmask.jpg" loading="lazy" decoding="async">
+    <img id="reposPic" src="https://santsang.github.io/docs/assets/pic-coding.jpg" alt="run R in colab" title="run R in colab" loading="lazy" decoding="async">
+    <img id="contactPic" style="padding-bottom: 3px;" alt="Globes &commat;BnF FM" title="Globes &commat;BnF FM" src="https://santsang.github.io/docs/assets/IMG_20230120_152835.jpg" loading="lazy", decoding="async">
+    <img id="backPic" alt="Missed Love Locks" title="Missed Love Locks" src="https://santsang.github.io/docs/assets/IMG_20200528_194041.jpg" loading="lazy" decoding="async">
+  </div>
+</div>
+
+
+<!--*****About*****-->
+<div class="container">
+  <div class="main" id="about">
+    <h1>Welcome to Dr. Sandro Tsang&rsquo;s Homepage</h1>
+    <p>
+      I have been awarded a PhD in Empirical Economics, and have worked in academic institutes of several countries. I have been a tutor on a master&rsquo;s degree programme accredited by <a class="org" href="https://m.euclid.int/programs/online-master-in-public-health-mph/" target="_blank">the EUCLID University</a> since 2012. I also work with <a class="org" href="https://nextgenu.org/" target="_blank">NextGenU.org</a>  to revise public health courses delivered to graduate students of medical schools.  The duties drive me to learn evidence-based medicine research methodologies applicable to clinical practice and health policy-making.
+      </br>
+      </br>
+      Clinical reasoning is my primary <a href="https://www.researchgate.net/profile/Sandro_Tsang" target="_blank">research interest</a>.  I consider understanding clinical behaviours critical for deriving operationalisable healthcare policies, but this topic is scarcely covered in economics textbooks.  I derived a Mathematical model that captures the uncertainties involved in prescribing antibiotics and the consequences as a 3-month MSc dissertation (<a href="https://doi.org/10.1142/S0217590808002859" target="_blank">here</a> is a published version). I subsequently researched into other clinical decision problems, including eHealth, influenza-like illnesses, etc.  My <a href="https://digibug.ugr.es/handle/10481/17576" target="_blank">PhD thesis</a> explored impacts of implementing eHealth to facilitate clinical reasoning from the perspectives of epistemology and practising <a href="https://en.wikipedia.org/wiki/Humanistic_medicine" target="_blank">humanistic medicine</a>.  I was keen on further developing this eHealth model.  My cold-call skill let me luckily reach <a href="https://www.uwl.ac.uk/about-us/how-university-works/biographies/professor-michael-loughlin" target="_blank">Professor Michael Loughlin</a> (I was not aware of his prominence in the philosophy of humanistic medicine and its related research).  My ideas intrigued him to guide me to further the research.  Without his guidance, I might not be motivated to write up an interdisciplinary theory that awarded me an <a href="https://www.google.co.uk/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiSppvAr93tAhXNxoUKHVjFAM0QFjAAegQIAxAC&url=http%3A%2F%2Fwww.pchealthcare.org.uk%2Fsites%2Fpchealthcare.org.uk%2Ffiles%2Fconference%2Fdownload%2Fespch_2nd_annual_brochure_spreads.pdf&usg=AOvVaw0YQ1F_7P3bqlo8PX1UTpPB" target="_blank">ESPCH Essay Prize</a> (reputed researchers were also in the competitor pool).  This theory portrays <a href="https://www.researchgate.net/publication/274729325_Are_economics_and_medicine_philosophically_incompatible_Arrow_physicians" target="_blank">Arrow Physician</a> to be an ideal medical practitioner in modern health systems.  S/he is required to deliver patient-centred care in a humanistic approach, and to reason like an economist at the same time. I postulate that establishing polycentric health systems is crucial to substantiate her/his mission, and to improve healthcare resource allocations through collective ethical actions.  My research also overlaps with policy-making for <a href="https://www.linkedin.com/posts/sandro-tsang_certificate-from-global-health-elearning-ugcPost-6706292922452606976-23aN" target="_blank" rel="noopener noreferrer">infectious disease</a> surveillance and mitigating antimicrobial resistance. It also involves turning my self-taught skills in programming (e.g., R, python, SQL, bash, etc.) into actions.
+      </br>
+      </br>
+      I mostly apply programming skills to analytic or typesetting levels.  However, I have spotted room for improving R packages <a href="https://cran.r-project.org/web/packages/koRpus/news.html" target="_blank">koRpus</a>, <a href="http://cran.nexr.com/web/packages/mice/NEWS" target="_blank">mice</a> and <a href="https://cran.rapporter.net/web/packages/miceadds/NEWS" target="_blank">miceadds</a>. I do practise the art of programming &#8211; solving problems efficiently with basic and minimal commands. This practice is shown in the codes stored in my GitHub <a href="https://github.com/santsang" target="_blank">repos</a>.  I only present some R and python codes there.  A techy will know that this webpage demonstrates applications of four computational languages. 
+      </br>
+      </br>
+      You may know more about me from <a href="http://www.linkedin.com/in/sandro-tsang" target="_blank">LinkedIn</a> or <a href="http://twitter.com/skf_tsang" target="_blank">twitter</a>.  I may share various academic topics and some computation tricks here.  I welcome your approaching me through <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/jep.12348" target="_blank">email</a> or filling in the <a href="#contact" target="_blank">form</a>.  I hope the (zoomable) slideshow on the sidebar entertains you too.  If you are visiting this webpage with a smartphone, please rotate it to see slideshow.
+    </p>
+  </div>
+</div>
+
+<!--*****articles*****-->
+<div class="container">
+  <div class="main" id="articles">
+  <h1>Publication list</h1>
+   </br>
+    <object
+       type="application/pdf"
+       data="https://santsang.github.io/docs/assets/data-Tsang-Sandro-Publication.pdf""
+       width="100%"
+       height="399px"
+    >
+    </object>
+    </br>
+
+  </div> 
+</div> 
+
+<!--*****repos*****-->
+<div class="container">
+  <div class="main" id="repos">
+    <h1>Code Samples</h1>
+    <p>You have been directed to my GitHub repos. The <a href="https://github.com/santsang/X-ray-Pytools/tree/script" target="_blank">X-ray-Pytools</a> include tools for quality check, editing,... building convolutional neural networks from X-ray images.  I was a novice of computer vision and developed the full-stack skills for handing image data for a 3-month project.
+    </br>
+    </br>
+    The <a href="https://github.com/santsang/scrapping" target="_blank">scrapping</a> scripts were written to serve my curisoity. I find that scrapping Google Scholar (GS) is increasingly applied to conduct systematic literature review.  The researchers either scrapped the first 100 abstracts or they never explained how they scrapped all the abstracts.
+    </br>
+    </br>
+    The first approach does not fulfill an exhaustive search criterion of systematic review. We know that the robot.txt of GS prohibits us from scrapping more than 100 abstracts. The second approach can be implemented by scrapping the downloaded webpages.  I created a timer to download the webpages in random time intervals.  I have never implemented this approach in my own research, because I am not wealthy enough to enter into a <b>legal battle</b> with the conglomerate.  I wrote up the scripts to simply verify the claim.  They may be excuted for other journal databases.  Scrapping GS violates its user policies.
+    </p>
+  </div>  
+</div>
+
+<!--*****Contact*****-->
+  <div class="main" id="contact"/>
+    <form id="gs-form" method="POST" 
+    action="https://script.google.com/macros/s/AKfycbwwg8Ax3uFMWpTlAbmNTAntWTX4jOBOVLJmWfh9OYgdeCOwhh_rspXLNkinS2Z3ED9I/exec">
+      <label for="name">Name:</label>
+      <input type="text" name="Sender" minlength="5" placeholder="Albert Einstein" required />
+      <label for="address">Email Address: </label>
+      <input type="email" name="Email" minlength="8" placeholder="username@example.com" required />
+      <label for="feedback">Feedback:</label>
+      <textarea name="Comment" rows="5" minlength="10" placeholder="Your view"></textarea>
+      <label for="submit"> </label>
+      <button id="submit" type="submit">send</button>
+    </form>
+  </div>  
+</div>
+
+<script>
+//********Text
+function switchText(blockName) {
+  let block = document.getElementsByClassName("main");
+  for (let i = 0; i < block.length; i++) {
+    block[i].style.display = "none";
+  }
+  document.getElementById(blockName).style.display = "block";
+  switchPic(blockName);
+}
+
+//********Picture
+function switchPic(blockName) {
+  const info = ['articles', 'repos', 'contact'];
+  var focus = blockName + "Pic";
+  let W = window.innerWidth;
+  let x = document.getElementById("slideshow");
+  document.getElementById("backPic").style.display = "none"; //"backPic" is to need to get pic in .navStatFrame turns up
+  if (W < 430) {
+    document.getElementByClassName("navFrame").style.display = "none";
+    document.getElementByClassName("navStatFrame").style.display = "none";
+    return;
+  }
+  for (let i = 0; i < info.length; i++) {
+    idPic = info[i] + "Pic";
+    document.getElementById(idPic).style.display = "none";
+  }
+  if (info.indexOf(blockName) > -1) {
+    x.style.display = "none";
+    document.getElementById(focus).style.display = "block";
+  } else {
+    x.style.display = "block";
+  };
+}
+
+//********collecting data from the form
+window.addEventListener("load", function() {
+  const form = document.getElementById('gs-form');
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    const data = new FormData(form);
+    const action = e.target.action;
+    fetch(action, {
+      method: 'POST',
+      body: data,
+    })
+    .then(() => {
+      alert("Success!");
+    })
+  });
+});
+
+//********reload page when resize
+// Check width and height on load of page
+window.onload = function() {
+	let iniHeigh = window.innerHeight;
+	let iniWidth = window.innerWidth;
+};
+		
+// Setting the current height & width, reload the page
+window.onresize = function(iniWidth,iniHeight) {
+	let nowHeight= window.innerHeight;
+	let nowWidth = window.innerWidth;
+  if (nowHeight != iniHeight || nowWidth != iniWidth) {  document.location.reload();
+  }
+};
+
+
+//********warn users if IE/edge is used
+function IEdetection() {
+  var ua = window.navigator.userAgent;
+  var msie = ua.indexOf('MSIE ');
+  var trident = ua.indexOf('Trident/');
+  var edge = ua.indexOf('Edge/');
+  if (msie > 0 || trident > 0 || edge > 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+var result = IEdetection();
+const msg = document.getElementById('result');
+if (result === true) {
+  msg.style.display = "block";
+} else {
+  msg.style.display = "none";
+}
+</script>
+
+</body>
+</html> 
