@@ -591,15 +591,10 @@ window.onload = function() {
 //*****Setting the current height & width, reload the page
 window.onresize = function(iniWidth,iniHeight) {
   let nowWidth = window.innerWidth;
-  let nowHeight = window.innerHeight;
   if (nowWidth != iniWidth) {
     document.location.reload();
   }
-  if (nowHeight < 429) {
-    document.getElementByClassName("navFrame").style..maxHeight = "60vh";
-  }
 };
-
 
 //********warn users if IE/edge is used
 function IEdetection() {
