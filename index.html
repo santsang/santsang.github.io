@@ -363,7 +363,7 @@ https://www.w3.org/Style/Examples/007/slideshow.en.html
 @media screen and (max-width: 429px) {
   h1 {
     font-size: calc(17px + var(--fontAdj));
-    font-weight: 600;
+    font-weight: 700;
   }
   p, br, label, input, textarea {
     font-size: calc(15px + var(--fontAdj));
@@ -379,7 +379,7 @@ https://www.w3.org/Style/Examples/007/slideshow.en.html
     width: 100%;
   }
   .main, #contact {
-    top: calc(20vh + var(--fontAdj));
+    top: calc(89px + (4 * var(--fontAdj)));
     left: 0;
     right: 0;
     width: auto;
@@ -390,7 +390,7 @@ https://www.w3.org/Style/Examples/007/slideshow.en.html
     right: 0;
     left: 0;
     width: auto;
-    height: auto;
+    height: calc(83px + (4 * var(--fontAdj)));
   }
   .sidenav button {
     top: 0;
@@ -419,10 +419,10 @@ https://www.w3.org/Style/Examples/007/slideshow.en.html
     padding: calc(2px + var(--fontAdj));
   }
   .main, #contact {
-    top: calc(21vh + var(--fontAdj));
-    left: 0;
-    right: 0;
-    width: auto;
+    top: calc(86px + (4 * var(--fontAdj)));
+  }
+  .sidenav {
+	height: calc(79px + (4 * var(--fontAdj)));
   }
 }
 
@@ -593,17 +593,16 @@ window.addEventListener("load", function() {
 });
 
 //********reload page when resize
-// Check width and height on load of page
+//*****Check width and height on load of page
 window.onload = function() {
-	let iniHeigh = window.innerHeight;
-	let iniWidth = window.innerWidth;
+  let iniWidth = window.innerWidth;
 };
 		
-// Setting the current height & width, reload the page
+//*****Setting the current height & width, reload the page
 window.onresize = function(iniWidth,iniHeight) {
-	let nowHeight= window.innerHeight;
-	let nowWidth = window.innerWidth;
-  if (nowHeight != iniHeight || nowWidth != iniWidth) {  document.location.reload();
+  let nowWidth = window.innerWidth;
+  if (nowWidth != iniWidth) {
+    document.location.reload();
   }
 };
 
