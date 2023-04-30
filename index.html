@@ -230,7 +230,7 @@ input {height: 28px;}
 .zoom:hover {
   position: fixed;
   margin: 0;
-  top: 45%;
+  top: 46%;
   right: calc(150% - var(--navFixedWidth));
   max-height: 79vh;
   scale: 1.39 135%;
@@ -324,12 +324,14 @@ https://www.w3.org/Style/Examples/007/slideshow.en.html
 
 @media screen and (max-width: 720px) {
   h1 {
-    font-size: calc(20px + var(--fontAdj));
+    font-size: calc(19px + var(--fontAdj));
+  }
+  p, br, label, input, textarea {
+    font-size: calc(17px + 0.390625vw);
   }
   .sidenav button {
     padding: 1px;
     padding-left: 5px;
-    font-size: calc(14px + var(--fontAdj));
     font-weight: 800;
   }
   @keyframes autoplay {
