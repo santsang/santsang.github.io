@@ -131,9 +131,7 @@ input {height: 28px;}
   top: 0px;
   right: var(--navRight);
   width: var(--navFixedWidth);
-/*  left: calc(100% - var(--navFixedWidth)); */
   height: 100%;
-/*  background: var(--navBgCol); */
   background-image: url("https://santsang.github.io/docs/assets/pic_light_green.png");
   padding: 8px 0;
   z-index: 1;
@@ -323,9 +321,9 @@ https://www.w3.org/Style/Examples/007/slideshow.en.html
 /* the responsive slideshow won't work if deleted */
 
 
-@media screen and (max-width: 711px) {
+@media screen and (max-width: 810px) {
   h1 {
-    font-size: calc(18px + var(--fontAdj));
+    font-size: calc(20px + var(--fontAdj));
   }
 
   .sidenav button {
@@ -342,13 +340,8 @@ https://www.w3.org/Style/Examples/007/slideshow.en.html
     13% {top: 0%; opacity: 0.8;}
     15% {top: 0%; opacity: 0;}
     20% {top: -100%; opacity: 0;}
-  /* 11.5% {top: -100%; opacity: 0;} */
-  /* create a gap between two pics after touching each other if 11%... are replaced */
     100% {top: -100%; opacity: 0;}
   }
-  
-  /* img, .navFrame, .navStatFrame {display: none;} */
-  
 }
 
 @media screen and (max-width: 599px) {
