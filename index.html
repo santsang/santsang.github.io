@@ -231,11 +231,10 @@ input {height: 28px;}
   position: fixed;
   top: -30px;
   right: calc(150% - var(--navFixedWidth));
-/*  left: -336px; */
   max-height: 79vh;
   scale: 1.39 135%;
   object-fit: fill;
-  background-color: rgha(0,0,0,0);
+  background-color: rgba(0,0,0,0);
 }
 
 #submit {
@@ -325,14 +324,15 @@ https://www.w3.org/Style/Examples/007/slideshow.en.html
   h1 {
     font-size: calc(20px + var(--fontAdj));
   }
-
   .sidenav button {
     padding: 1px;
     padding-left: 5px;
     font-size: calc(14px + var(--fontAdj));
     font-weight: 800;
   }
-  
+	.zoom:hover {
+  	top: -70px;
+	}
   @keyframes autoplay {
     0% {top: 0%; opacity: 0.01;}
     2.5% {top: 0%; opacity: 0.1;}
