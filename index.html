@@ -229,12 +229,14 @@ input {height: 28px;}
   }
 .zoom:hover {
   position: fixed;
-  top: -70px;
+  margin: 0;
+  top: 50%;
   right: calc(150% - var(--navFixedWidth));
   max-height: 79vh;
   scale: 1.39 135%;
   object-fit: fill;
   background-color: rgba(0,0,0,0);
+  transform: translate(0, -50%);
 }
 
 #submit {
