@@ -229,7 +229,7 @@ input {height: 28px;}
   }
 .zoom:hover {
   position: fixed;
-  top: -30px;
+  top: 2%;
   right: calc(150% - var(--navFixedWidth));
   max-height: 79vh;
   scale: 1.39 135%;
@@ -329,9 +329,6 @@ https://www.w3.org/Style/Examples/007/slideshow.en.html
     padding-left: 5px;
     font-size: calc(14px + var(--fontAdj));
     font-weight: 800;
-  }
-  .zoom:hover {
-    top: -70px;
   }
   @keyframes autoplay {
     0% {top: 0%; opacity: 0.01;}
@@ -437,7 +434,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div>
     <button class="active" onclick="switchText('about')">About</button>
     <button onclick="switchText('articles')">Publications</button>
-    <button onclick="window.open('https://github.com/santsang');switchText('repos')">Programming</button>
+    <button onclick="switchText('repos')">Programming</button> <!--removed window.open('https://github.com/santsang');-->
     <button onclick="switchText('contact')">Contact
     </button>
   </div>
@@ -506,7 +503,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="container">
   <div class="main" id="repos">
     <h1>Code Samples</h1>
-    <p>You have been directed to my GitHub repos. The <a href="https://github.com/santsang/X-ray-Pytools/tree/script" target="_blank">X-ray-Pytools</a> include tools for quality check, editing,... building convolutional neural networks from X-ray images.  I was a novice of computer vision and developed the full-stack skills for handing image data for a 3-month project.
+    <p>My GitHub <a href="https://github.com/santsang" target="_blank">repos</a> presents a small sample of R and python codes. The <a href="https://github.com/santsang/X-ray-Pytools/tree/script" target="_blank">X-ray-Pytools</a> include tools for quality check, editing,... building convolutional neural networks from X-ray images.  I was a novice of computer vision and developed the full-stack skills for handing image data for a 3-month project.
     </br>
     </br>
     The <a href="https://github.com/santsang/scrapping" target="_blank">scrapping</a> scripts were written to serve my curisoity. I find that scrapping Google Scholar (GS) is increasingly applied to conduct systematic literature review.  The researchers either scrapped the first 100 abstracts or they never explained how they scrapped all the abstracts.
