@@ -225,18 +225,16 @@ input {height: 28px;}
 }
 
 .zoom {
-  transition: transform.25s ease-in-out;
+  transition: transform .2s ease-in-out;
   }
 .zoom:hover {
   position: fixed;
-  margin: 0;
-  top: 50%;
-  left: 50%;
+  top: -70px;
+  right: calc(150% - var(--navFixedWidth));
   max-height: 79vh;
   scale: 1.39 135%;
   object-fit: fill;
   background-color: rgba(0,0,0,0);
-  transform: translate(-50%, -50%);
 }
 
 #submit {
