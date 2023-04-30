@@ -57,7 +57,7 @@ h1{
 p, br, label, input, textarea {
   display: block;
   margin: 0;
-  font-size: calc(16px + 0.390625vw);
+  font-size: calc(15px + 0.390625vw);
   padding: calc(6px + 0.390625vw) 0;
 }
 
@@ -230,7 +230,7 @@ input {height: 28px;}
 .zoom:hover {
   position: fixed;
   margin: 0;
-  top: 46%;
+  top: 48%;
   right: calc(150% - var(--navFixedWidth));
   max-height: 79vh;
   scale: 1.39 135%;
@@ -591,8 +591,12 @@ window.onload = function() {
 //*****Setting the current height & width, reload the page
 window.onresize = function(iniWidth,iniHeight) {
   let nowWidth = window.innerWidth;
+  let nowHeight = window.innerHeight;
   if (nowWidth != iniWidth) {
     document.location.reload();
+  }
+  if (nowHeight < 429) {
+    document.getElementByClassName("navFrame").style..maxHeight = "60vh";
   }
 };
 
