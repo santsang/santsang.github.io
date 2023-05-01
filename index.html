@@ -512,6 +512,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <!--*****Contact*****-->
+<div class="container">
   <div class="main" id="contact"/>
     <form id="gs-form" method="POST" 
     action="https://script.google.com/macros/s/AKfycbwwg8Ax3uFMWpTlAbmNTAntWTX4jOBOVLJmWfh9OYgdeCOwhh_rspXLNkinS2Z3ED9I/exec">
@@ -524,7 +525,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <label for="submit"> </label>
       <button id="submit" type="submit">send</button>
     </form>
-  </div>  
+    <p>If you are a smartphone user, the form is not yet useable and will create erratic behaviours.  Please accept my apologies.  I will resolve it after fixing some urgent matters.</p>
+  </div>
 </div>
 
 <script>
@@ -582,15 +584,12 @@ window.addEventListener("load", function() {
 //********reload page when resize
 //*****Check width and height on load of page
 window.onload = function() {
-  if (typeof executed !== 'undefined') {
-    var executed = false;
+  if (typeof iniWidth !== 'undefined') {
+    let iniWidth = window.innerWidth;
+    IEdetection();
+    return iniWidth;
   } else {
-    if (!executed) {
-      executed = true;
-      let iniWidth = window.innerWidth;
-      IEdetection();
-      return executed;
-    } else {return;}
+    return;
   }
 };
 		
