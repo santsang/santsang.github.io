@@ -585,7 +585,6 @@ window.addEventListener("load", function() {
 //*****Check width and height on load of page
 window.onload = function() {
    let iniWidth = window.innerWidth;
-   IEdetection();
 };
 		
 //*****Setting the current height & width, reload the page
@@ -609,6 +608,8 @@ function IEdetection() {
     msg.style.display = "none";
   }
 }
+var action = IEdetection();
+
 </script>
 
 </body>
