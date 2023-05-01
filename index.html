@@ -583,21 +583,22 @@ window.addEventListener("load", function() {
 
 //********reload page when resize
 //*****Check width and height on load of page
-window.onload = function() {
-   let iniWidth = window.innerWidth;
-};
-		
-//*****Setting the current height & width, reload the page
-window.onresize = function(iniWidth) {
+if (typeof iniWidth !== 'undefined') {
+  const iniWidth = window.innerWidth;
+}
+//*****compare the current inner width
+function changeWidth(iniWidth) {
   let nowWidth = window.innerWidth;
   if (nowWidth != iniWidth) {
    document.location.reload();
   } else {return;}
 };
+//*****run the function on resize
+window.onresize = changeWidth(iniWidth)
 
 //********warn users if IE/edge is used
-function IEdetection() {
-  var ua = window.navigator.userAgent;
+const ua = window.navigator.userAgent;
+function IEdetection(ua) {
   var msie = ua.indexOf('MSIE ');
   var trident = ua.indexOf('Trident/');
   var edge = ua.indexOf('Edge/');
@@ -607,8 +608,8 @@ function IEdetection() {
   } else {
     msg.style.display = "none";
   }
-}
-var action = IEdetection();
+};
+var warn = IEdetection(ua);
 
 </script>
 
