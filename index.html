@@ -372,6 +372,7 @@ https://www.w3.org/Style/Examples/007/slideshow.en.html
     left: 0;
     right: 0;
     width: auto;
+    z-index: 0;
   }
   .sidenav {
     position: relative;
@@ -388,7 +389,6 @@ https://www.w3.org/Style/Examples/007/slideshow.en.html
     font-weight: 700;
     text-align: center;
     float: none;
-    z-index: 1;
   }
   .sidenav button.active {
     font-weight: 700;
@@ -582,15 +582,24 @@ window.addEventListener("load", function() {
 //********reload page when resize
 //*****Check width and height on load of page
 window.onload = function() {
-  let iniWidth = window.innerWidth;
+  if (typeof executed !== 'undefined') {
+    var executed = false;
+  } else {
+    if (!executed) {
+      executed = true;
+      let iniWidth = window.innerWidth;
+      IEdetection();
+      return executed;
+    } else {return;}
+  }
 };
 		
 //*****Setting the current height & width, reload the page
-window.onresize = function(iniWidth,iniHeight) {
+window.onresize = function(iniWidth) {
   let nowWidth = window.innerWidth;
   if (nowWidth != iniWidth) {
     document.location.reload();
-  }
+  } else {return;}
 };
 
 //********warn users if IE/edge is used
@@ -599,18 +608,12 @@ function IEdetection() {
   var msie = ua.indexOf('MSIE ');
   var trident = ua.indexOf('Trident/');
   var edge = ua.indexOf('Edge/');
+  const msg = document.getElementById('result');
   if (msie > 0 || trident > 0 || edge > 0) {
-    return true;
+    msg.style.display = "block";
   } else {
-    return false;
+    msg.style.display = "none";
   }
-}
-var result = IEdetection();
-const msg = document.getElementById('result');
-if (result === true) {
-  msg.style.display = "block";
-} else {
-  msg.style.display = "none";
 }
 </script>
 
