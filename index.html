@@ -584,20 +584,15 @@ window.addEventListener("load", function() {
 //********reload page when resize
 //*****Check width and height on load of page
 window.onload = function() {
-  if (typeof iniWidth !== 'undefined') {
-    let iniWidth = window.innerWidth;
-    IEdetection();
-    return iniWidth;
-  } else {
-    return;
-  }
+   let iniWidth = window.innerWidth;
+   IEdetection();
 };
 		
 //*****Setting the current height & width, reload the page
 window.onresize = function(iniWidth) {
   let nowWidth = window.innerWidth;
   if (nowWidth != iniWidth) {
-    document.location.reload();
+    setTimeout(document.location.reload(),100);
   } else {return;}
 };
 
