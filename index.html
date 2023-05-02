@@ -79,9 +79,9 @@ a:hover, a.org:active, a.org:hover {
   background-color: rgba(159, 159, 223, 0.6);
 }
 
-form:focus-within {
+<!--form:focus-within {
   font-weight: 700;
-}
+}-->
 
 label {
   float:left;
@@ -581,11 +581,8 @@ window.addEventListener("load", function() {
   });
 });
 
-window.onload = function() {
-   const iniWidth = window.innerWidth;
-};
-		
-//*****Setting the current height & width, reload the page
+//********Setting the current height & width, reload the page
+const iniWidth = window.innerWidth;
 window.onresize = function(iniWidth) {
   let nowWidth = window.innerWidth;
   if (nowWidth != iniWidth) {
