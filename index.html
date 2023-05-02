@@ -44,8 +44,9 @@ body {
   font-family: "Lato", sans-serif;
 }
 body, html {
-  overscroll-behavior: none;
-}/* disable overscrolling */
+  overscroll-behavior-y: contain;
+}
+ 
 h1{
   display: block;
   top: 0;
@@ -82,9 +83,9 @@ a:hover, a.org:active, a.org:hover {
   background-color: rgba(159, 159, 223, 0.6);
 }
 
-<!--form:focus-within {
+form:focus-within {
   font-weight: 700;
-}-->
+}
 
 label {
   float:left;
