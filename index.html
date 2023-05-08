@@ -259,7 +259,7 @@ input {height: 28px;}
 
 ::placeholder {font-size: 12pt;}
 
-#articles, #repos, #contact {display: none;}
+#articles, #repos, #contact, #result {display: none;}
 #contact {top: 20px;} /*the contact form*/
 
 #articlesPic, #contactPic, #reposPic, #backPic {display: none;}
@@ -607,7 +607,9 @@ function IEdetection() {
     msg.style.display = "none";
   }
 }
-var remark = IEdetection();
+if (remark == null) {
+  var remark = IEdetection();
+} else {return;}
 </script>
 
 </body>
